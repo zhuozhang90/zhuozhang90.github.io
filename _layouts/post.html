@@ -1,0 +1,22 @@
+--- 
+layout: default 
+---
+
+
+<a href="/"><i class='fa fa-chevron-left'></i> back</a>
+
+<div class="container row justify-content-md-center">
+    <div class="col-md-8">
+        <h1>{{page.title}}</h1>
+        <div class="text-muted">
+
+            Posted on {{ page.date | date: '%B %d, %Y' }}
+            <br /> Categories: {% for cat in page.categories %}
+            <a href="/category/{{cat}}.html">{{cat}}</a> {% endfor %}
+            <br />
+        </div>
+        {{ content }}
+
+        {{page.previous.title}} {{page.next.title}}
+    </div>
+</div>

@@ -1,0 +1,75 @@
+body {
+    font-family: 'Alegreya Sans', sans-serif;
+}
+
+a {
+    color: inherit;
+}
+
+a:hover {
+    color: inherit;
+}
+
+.navbar-light {
+    font-family: 'Oxygen', sans-serif;
+}
+
+.navbar-light .navbar-brand {
+    border-left: 5px solid #03A9F5;
+    padding: 0 5px;
+    transition: color .5s ease-in-out;
+}
+
+.navbar-light .navbar-brand:hover {
+    color: #03A9F5;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    text-decoration: none;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: -webkit-gradient(linear, left top, right top, from(#03A9F5),
+    color-stop(50%, #03A9F5), color-stop(50%, #03A9F5));
+    background-image: linear-gradient(to right, #03A9F5, #03A9F5 50%, rgba(0,0,0,.9) 50%);
+    background-size: 200% 100%;
+    background-position: 100%;
+    padding: 5px 0 0 0;
+    margin: 0 5px;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    -webkit-transition: all 0.5s cubic-bezier(0, 0, 0.23, 1);
+    transition: all 0.5s cubic-bezier(0, 0, 0.23, 1);
+    background-position: 0%;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+    background-image: none;
+    background-color: #03A9F5;
+}
+
+.btn-outline-dark {
+    color: #03A9F5;
+}
+
+@media screen and (min-width: 575px) {
+    .expand {
+        display: inline-block;
+        text-align: center;
+        width: 30px;
+        overflow: hidden;
+        transition: all .3s linear;
+    }
+    .expand:hover {
+        width: 100px;
+    }
+
+    .expand-text {
+        opacity: 0;
+    }
+
+    .expand:hover .expand-text {
+        opacity: 90;
+    }
+}
+
