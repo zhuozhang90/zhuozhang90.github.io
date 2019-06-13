@@ -58,14 +58,44 @@
 
 <div class="container">
 
+<a href="/"><i class='fa fa-chevron-left'></i> back</a>
 
-    <a href="/jekyll/webdev/2018/01/10/welcome-to-jekyll.html">
-      Setting up blog site with Jekyll and github
-    </a>
+<div class="container row justify-content-md-center">
+    <div class="col-md-8">
+        <h1>Text Adventure Interpreter in Python - 1</h1>
+        <div class="text-muted">
 
-    <a href="/webdev/2017/12/31/New-year.html">
-      MechanicalSoup for the Rescue
-    </a>
+            Posted on June 09, 2019
+            <br /> Categories: 
+            <a href="/category/python.html">python</a> 
+            <a href="/category/game.html">game</a> 
+            <br />
+        </div>
+        <p>This is a project I’m working on as the final project for one of the classes for school. The idea came from old-school text adventures but this project is not going to be a full-featured interpreter but instead I’ll only implement some basic functionalities like parsing the game file, save/restore, score keeping as well as an optional voice input.</p>
+
+<p>I have been following Thorsten Ball’s “<a href="https://interpreterbook.com/">Interpreter in Go</a>” book and the chapters about parsing input really made me wonder if I could implement something similar for other text-based tools. My initial thoughts are to do something about natural languages but I guess text adventures can also be seen as natural language based projects.</p>
+
+<p>Below is a list of components I plan to implement for this interpreter. As I mentioned earlier I’m only going to write the basic components and leave the rest for maybe the future. There are many interpreters for different formats of text adventures that can be found on the <a href="https://ifdb.tads.org/">IFDB</a> website.</p>
+
+<ul>
+  <li>reading game files with a parser</li>
+  <li>internal representation of the game map</li>
+  <li>player navigation in the map</li>
+  <li>object interaction</li>
+  <li>score keeping</li>
+  <li>save/restore with a save file</li>
+  <li>(optional) voice input that parses natural language</li>
+  <li>(optional) test files</li>
+</ul>
+
+<p>Since I’ll only have about 9 weeks to finish the project I might not even implement all of the non-optional components like score keeping or save/restore. The point of the whole project is to teach myself how parsers work and data structures. Efficiency is also not a priority as I’ll be using vanilla Python libraries and collections as much as possible and won’t be spending too much time optimizing speed.</p>
+
+<p>I also plan to make this project as modular as I can if time permits. This will make it easier to expand the project if anyone plans to do so in the future, or if any components can be reused for other projects.</p>
+
+
+        Setting up blog site with Jekyll and github 
+    </div>
+</div>
 
 
 </div>
