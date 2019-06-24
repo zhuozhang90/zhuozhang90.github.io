@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zhuo Zhang</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/css/bootstrap.min.css" integrity="sha384-Zug+QiDoJOrZ5t4lssLdxGhVrurbmBWopoEl+M6BdEfwnCJZtKxi1KgxUyJq13dy" crossorigin="anonymous">
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.3/js/bootstrap.min.js" integrity="sha384-a5N7Y/aK3qNeh15eJKGWxsqtnX/wWdSZSKp+81YjTmS15nvnvxKHuzaWwXHDli+4" crossorigin="anonymous"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.2/js/all.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Alegreya+Sans|Oxygen" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/main.css">
+</head>
+
+<body class="bg-light">
+    <nav class="navbar navbar-expand-sm navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="/">ANDREW/ZHUO/ZHANG</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link " href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/code">Code</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/assets/resume.pdf">Résumé</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="/about">About</a>
+                    </li>
+                </ul>
+                <span class="navbar-text">
+              <div>
+            <a href="https://www.linkedin.com/in/andrew-zhang-a8bba478"><button class='btn btn-outline-dark btn-sm expand' href="https://www.linkedin.com/in/andrew-zhang-a8bba478">
+            <span><i class='fab fa-linkedin'></i></span><span class="expand-text"> linkedin</span>
+                </button></a>
+                <a href="https://github.com/andrewzhuozhang"><button class='btn btn-outline-dark btn-sm expand'>
+            <span><i class='fab fa-github'></i></span><span class="expand-text"> github</span>
+          </button></a>
+          <!--      <a href="https://codepen.io/AndrewZh/"><button class='btn btn-outline-dark btn-sm expand'>-->
+          <!--  <span><i class='fab fa-codepen'></i></span><span class="expand-text"> codepen</span>-->
+          <!--</button></a>-->
+            </div>
+            </span>
+        </div>
+        </div>
+    </nav>
+
+
+<div class="container">
+
+<a href="/"><i class='fa fa-chevron-left'></i> back</a>
+
+<div class="container row justify-content-md-center">
+    <div class="col-md-8">
+        <h1>Re-Set Up Jekyll to Host Static Website on GitHub</h1>
+        <div class="text-muted">
+
+            Posted on June 20, 2019
+            <br /> Categories: 
+            <a href="/category/web.html">web</a> 
+            <a href="/category/jekyll.html">jekyll</a> 
+            <br />
+        </div>
+        <p>I’ve been wanting to set up a personal website for a while and I ended up choosing GitHub instead of WordPress for hosting my static website. One of the main reasons I decided to use GitHub is because it supports uploading blog posts in MarkDown and it just makes it easier and more portable in case I want to keep a copy of everything I post.</p>
+
+<p>GitHub uses Jekyll to compile the pages from md to html and I have had to set up Jekyll more than a few times since I upgraded my system every few months. There’re some tricky parts of setting up Ruby and Jekyll after the initial project set up so I’m going to walk through setting up the environment for non-first time use.</p>
+
+<p>Normally what happens to me is that when I reinstall or upgrade my system, I’ll have to reconfigure my environment for ruby and jekyll. To say this not without a hint of shame, I reinstall my system way too much. Not even just distro-hopping. When things get too messed up sometimes it’s just easier to start from a clean slate. I generally try to use virtual machines and virtual environments (e.g. <code class="highlighter-rouge">pipenv</code> for python) it’s still inevitable sometimes.</p>
+
+<p>So without further ado, this is how I re-setup my environment on currently Manjaro Linux for jekyll-backed static website.</p>
+
+<p>Make sure that this is not the first time setting up the environment for the website as we need the <code class="highlighter-rouge">Gemfile</code> to exist in the directory. If not follow the official tutorial.</p>
+
+<h3 id="install-ruby-and-bundler">Install Ruby and bundler</h3>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Sudo Pacman <span class="nt">-Syu</span> ruby
+gem install bundler
+</code></pre></div></div>
+<p>Then ruby’s gonna tell you your gem executables directory is not in your <code class="highlighter-rouge">$PATH</code>, with something like <code class="highlighter-rouge">WARNING:  You don't have ~/.gem/ruby/2.6.0/bin in your PATH, gem executables will not run.</code> so now we just need to add it.</p>
+
+<h3 id="add-gem-executables-to-path">Add Gem Executables to PATH</h3>
+
+<p>Best way I found is to simply add it to your <code class="highlighter-rouge">~/.profile</code> file if you are using bash.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vim ~/.profile
+</code></pre></div></div>
+<p>then add the line <code class="highlighter-rouge">export PATH="$PATH:~/.gem/ruby/2.6/bin"</code>, you might have to change the version number based on which version of ruby you just installed.</p>
+
+<p>Then exit out of vim, and we are ready to install the packages.</p>
+
+<h3 id="install-packages-with-gem">Install Packages With Gem</h3>
+
+<p>Before <code class="highlighter-rouge">gem install</code> we need to configure the <code class="highlighter-rouge">Gemfile</code> first. Simply add <code class="highlighter-rouge">gem 'github-pages', group: :jekyll_plugins</code> right below <code class="highlighter-rouge">source 'https://rubygems.org'</code> (add this one first if not present in the Gemfile already).</p>
+
+<p>Then simply <code class="highlighter-rouge">bundle install</code>. If it’s been a while since last time you actually worked on the project and updated the dependencies then it’ll probably fail and bundler’s gonna say it couldn’t find compatible versions or jekyll or something, as the versions listed in our Gemfile.lock is way too old, so we’ll need to <code class="highlighter-rouge">bundle update</code>, which installs the required packages but newer versions. After inputting the password for sudo, the packages will be all set.</p>
+
+<p>Now simply edit the files then <code class="highlighter-rouge">jekyll build</code> to build the website and <code class="highlighter-rouge">jekyll serve</code> to serve on local machine.</p>
+
+
+
+        Text Adventure Interpreter in Python - 2 
+    </div>
+</div>
+
+
+</div>
+
+	</body>
+
+this is the footer
+
+Zhuo Zhang
+
+</html>

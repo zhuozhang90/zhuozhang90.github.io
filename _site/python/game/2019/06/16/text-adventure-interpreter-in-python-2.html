@@ -62,26 +62,36 @@
 
 <div class="container row justify-content-md-center">
     <div class="col-md-8">
-        <h1>Setting up blog site with Jekyll and github</h1>
+        <h1>Text Adventure Interpreter in Python - 2</h1>
         <div class="text-muted">
 
-            Posted on January 10, 2018
+            Posted on June 16, 2019
             <br /> Categories: 
-            <a href="/category/jekyll.html">jekyll</a> 
-            <a href="/category/webdev.html">webdev</a> 
+            <a href="/category/python.html">python</a> 
+            <a href="/category/game.html">game</a> 
             <br />
         </div>
-        <ol>
-  <li>set up github</li>
-  <li>install jekyll in c9</li>
-  <li>set up directories</li>
-  <li>set up layouts</li>
-  <li>set up templates</li>
-  <li></li>
-</ol>
+        <p>The hope for this week is to set up the basic command line interface and parser for the game file. The game will only be accepting a few commands for navigating (<code class="highlighter-rouge">go north, south, east, west</code>) and interacting with objects (mostly <code class="highlighter-rouge">pick up</code> and <code class="highlighter-rouge">use</code> items). The game file will be structured as a JSON file indicating the map, the description of different rooms, as well as which objects are to be interacted with.</p>
+
+<h3 id="0-the-project-structure">0. The Project Structure</h3>
+
+<p>The project structure is going to be relatively simple. The entry point of the program will be a file called <code class="highlighter-rouge">taip.py</code>, which is just</p>
+
+<h3 id="1-the-command-line">1. The Command Line</h3>
+
+<p>The command line handles user inputs and is essentially a very simple prompt that takes commands and manipulates the internal representation of the game and its status accordingly. it’s very easy to start the interface and also since the limited number of commands we need to implement, it’s relatively easy to write.</p>
+
+<blockquote>
+  <p>starting the prompt: <code class="highlighter-rouge">command.py</code></p>
+</blockquote>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="bp">True</span><span class="p">:</span>
+    <span class="k">print</span><span class="p">(</span><span class="s">"hey"</span><span class="p">)</span>
+
+</code></pre></div></div>
 
 
-        MechanicalSoup for the Rescue Text Adventure Interpreter in Python - 1
+        Text Adventure Interpreter in Python - 1 Re-Set Up Jekyll to Host Static Website on GitHub
     </div>
 </div>
 
